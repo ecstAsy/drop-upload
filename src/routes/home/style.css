@@ -1,0 +1,88 @@
+.home {
+  min-height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload {
+  width: 720px;
+  height: 360px;
+  border-radius: 6px;
+  border: 1px dashed #d9d9d9;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #606266;
+}
+
+.input {
+  display: none;
+  overflow: visible;
+  touch-action: manipulation
+}
+
+.error {
+  width: 720px;
+  text-align: left;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.error span {
+  color: red;
+  transition: ease-in-out .5s;
+}
+
+.submit {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #409eff;
+  border: 2px solid #409eff;
+  color: #fff;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 24px;
+  transition: .1s;
+  font-weight: 500;
+  user-select: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.submit:hover {
+  background-color: rgb(102, 177, 255);
+  border-color: transparent;
+}
+
+.DirectoryTree {}

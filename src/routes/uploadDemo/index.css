@@ -1,0 +1,21 @@
+.demo {
+  min-height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.demoBox {
+  width: 720px;
+  height: 360px;
+  border-radius: 6px;
+  border: 1px dashed #d9d9d9;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
