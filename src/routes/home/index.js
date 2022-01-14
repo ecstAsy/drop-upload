@@ -1,6 +1,7 @@
 import {  h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import Directory from "../../utils/directory";
+import Request from "../../utils/ajax";
 import getTree from "../../utils/tree";
 import style from "./style.css";
 
@@ -12,6 +13,12 @@ const Home = () => {
   const drop = new Directory();
   const onSubmit = () => {
     console.log(value);
+    const form = new FormData();
+    value.map(file => form.append('files',file))
+    Request({
+      url: 'http://172.16.0.139:8080',
+      fileList:form
+    })
   };
   const onChange = (e) => {
     return setValue(e.target.files);
