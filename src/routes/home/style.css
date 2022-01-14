@@ -29,6 +29,7 @@ h3 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  overflow-y: scroll;
 }
 
 .upload p {
@@ -89,7 +90,25 @@ h3 {
   line-height: 24px;
 }
 
-.DirectoryTree ul {
+.DirectoryTree {
   margin-left: 24px;
-  background: #409eff;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  font-size: 12px;
+  list-style: decimal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 24px;
+}
+
+li p {
+  line-height: 36px;
+}
+
+li p span {
+  margin-left: 12px;
 }
