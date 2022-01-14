@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-13 15:45:41
- * @LastEditTime: 2022-01-13 17:50:47
+ * @LastEditTime: 2022-01-14 09:12:57
  * @LastEditors: ecstAsy
  */
 
@@ -29,7 +29,7 @@ const getTree = (values) => {
   if (!values || !values.length) {
     return false
   }
-  let root = [{fullPath:'/',children:[]}]
+  let root = [{name:'root',fullPath:'/',children:[]}]
   findParent(values)
   findChildren(root, values)
   return root

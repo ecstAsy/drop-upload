@@ -85,4 +85,11 @@ h3 {
   border-color: transparent;
 }
 
-.DirectoryTree {}
+.DirectoryTree {
+  line-height: 24px;
+}
+
+.DirectoryTree ul {
+  margin-left: 24px;
+  background: #409eff;
+}

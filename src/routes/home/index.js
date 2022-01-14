@@ -1,4 +1,4 @@
-import { h } from "preact";
+import {  h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import Directory from "../../utils/directory";
 import getTree from "../../utils/tree";
@@ -76,7 +76,7 @@ const Home = () => {
       isDirectory: false,
       isFile: true,
       name: "www.html",
-    },{
+    }, {
       fullPath: "/www.html",
       isDirectory: false,
       isFile: true,
@@ -85,7 +85,7 @@ const Home = () => {
   ]);
   const [isDrop, setIsDrop] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [tree, setTree] = useState([]);
+  const [trees, setTrees] = useState([]);
   const drop = new Directory();
   const onSubmit = () => {
     console.log(value);
@@ -115,64 +115,43 @@ const Home = () => {
   };
 
   const getFileTree = () => {
-    // setTree()
-
-    console.log(getTree(value));
+    const data = getTree(value);
+    console.log(data);
+    setTrees(data)
   }
 
   useEffect(() => {
     getFileTree();
-  })
-  const DirectoryTree = () => {
+  }, [])
+
+  const TreeItem = ({ row }) => {
+    if (row.children) {
+      return (
+        <li>
+          <span>{row.name}</span>
+          <ul>
+            {
+              row.children.map(item => <TreeItem key={item.fullPath} row={item} />)
+            }
+          </ul>
+        </li>
+      )
+    }
     return (
-      <div class={style.DirectoryTree}>
-        <ul>
-          <li>
-            <span> 拉莫小学 </span>
-            <ul>
-              <li>
-                <span> 一年级 </span>
-                <ul>
-                  <li>
-                    <span> 一班 </span>
-                  </li>
-                  <li>
-                    <span> 二班 </span>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span> 二年级 </span>
-                <ul>
-                  <li>
-                    <span> 一班 </span>
-                  </li>
-                  <li>
-                    <span> 二班 </span>
-                  </li>
-                  <li>
-                    <span> 三班 </span>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span> 三年级 </span>
-                <ul>
-                  <li>
-                    <span> 一班 </span>
-                  </li>
-                  <li>
-                    <span> 二班 </span>
-                  </li>
-                  <li>
-                    <span> 三班 </span>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <li>
+        <span>{row.name}</span>
+      </li>
+    )
+  }
+
+  const DirectoryTree = () => {
+    console.log(trees);
+    return (
+      <ul class={style.DirectoryTree}>
+        {
+          trees.map(item => <TreeItem key={item.fullPath} row={item} />)
+        }
+      </ul>
     );
   };
 
@@ -193,7 +172,7 @@ const Home = () => {
             setIsDrop(true);
           }}
         >
-          {value.length ? <p> 将文件拖到此处上传 </p> : <DirectoryTree />}
+          {!value.length ? <p> 将文件拖到此处上传 </p> : <DirectoryTree />}
           <input
             class={style.input}
             value={value}
