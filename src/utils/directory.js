@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-06 16:58:12
- * @LastEditTime: 2022-01-06 17:21:08
+ * @LastEditTime: 2022-01-17 17:52:45
  * @LastEditors: ecstAsy
  */
 
@@ -26,13 +26,18 @@ class Directory {
   }
   // 读取文件夹内容
   readDirectory(entires) {
+    this.setValue(entires);
     entires.map((item) => {
       if (item.isDirectory) {
         let directoryReader = item.createReader();
         this.getAllEntries(directoryReader);
+      } else {
+        item.file(file => {
+           file.fullPath = item.fullPath
+           item.content = file;
+        })
       }
     });
-    this.setValue(entires);
   }
   getAllEntries(directoryReader) {
     let entries = [];
@@ -52,12 +57,18 @@ class Directory {
   }
 
   getDirectoryInfo = (entries) => {
+    this.setValue(entries);
     entries.map((item) => {
       if (item.isDirectory) {
+        console.log(item);
         let directoryReader = item.createReader();
         this.getAllEntries(directoryReader);
+      } else {
+        item.file(file => {
+          file.fullPath = item.fullPath
+          item.content = file;
+        })
       }
-      this.setValue(entries);
     });
 
     return this.getValue();

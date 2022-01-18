@@ -3,8 +3,8 @@
   /* Project id 3141048 */
   /* Color fonts */
   src:
-    url('//at.alicdn.com/t/font_3141048_aag5xaaw29j.woff2?t=1642130303470') format('woff2'),
-    url('//at.alicdn.com/t/font_3141048_aag5xaaw29j.ttf?t=1642130303470') format('truetype');
+    url('//at.alicdn.com/t/font_3141048_wtkhtv9wxu.woff2?t=1642477696712') format('woff2'),
+    url('//at.alicdn.com/t/font_3141048_wtkhtv9wxu.ttf?t=1642477696712') format('truetype');
 }
 
 .icon {
@@ -13,6 +13,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-error:before {
+  content: "\e6c6";
+}
+
+.icon-default:before {
+  content: "\e775";
 }
 
 .icon-vue:before {

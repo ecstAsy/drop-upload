@@ -9387,11 +9387,6 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-simple-uploader.js@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/simple-uploader.js/-/simple-uploader.js-0.6.0.tgz#55724264c89ff70df4a9855bcd28eb92f0b88ced"
-  integrity sha512-EXN+o+LD6PVnfzTq/usP8k8yYrI6wKrAx8e+fPcPLVzzttonkyn1KT+Ycx5JnPBSnp6lpiVhNG4JhDJucdPnhA==
-
 sirv-cli@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sirv-cli/-/sirv-cli-1.0.3.tgz#33789a8f9d6dcee2aca2e35c3c97051b462ca00f"

@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-13 15:45:41
- * @LastEditTime: 2022-01-14 10:58:50
+ * @LastEditTime: 2022-01-17 17:32:25
  * @LastEditors: ecstAsy
  */
 
@@ -11,7 +11,9 @@ const Videos = [
 const Images = [
   'png', 'jpg', 'jpeg'
 ]
-
+const Icons = [
+  'vue','sass','scss','css','jsx','md','js','json','svg','excel','file','word','ppt','music','html','video','img','zip','gif','exe','pdf','txt','wps'
+]
 const findParent = (values) => {
   values.map((item) => {
     let parent = item.fullPath.split('/');
@@ -26,8 +28,10 @@ const findParent = (values) => {
         itp = 'video'
       } else if (Images.includes(itp)) {
         itp = 'img'
-      }
-      item.icon = itp
+      } else if (itp.match(/htm/)){
+        itp = 'html'
+      } 
+      item.icon = Icons.includes(itp) ? itp : 'default'
     }
 
   })
@@ -42,13 +46,35 @@ const findChildren = (roots, values) => {
   })
 }
 
-const getTree = (values) => {
+const findType = values => {
+  values.map((item) => {
+    if (item.isDirectory) {
+      item.icon = 'file'
+    } else {
+      let itp = item.name.split('.').pop();
+      if (Videos.includes(itp)) {
+        itp = 'video'
+      } else if (Images.includes(itp)) {
+        itp = 'img'
+      }
+      item.icon = itp
+    }
+  })
+}
+
+const getTree = (values, type) => {
   if (!values || !values.length) {
     return false
   }
   let root = [{ name: '/', fullPath: '/', children: [], icon: 'file' }]
-  findParent(values)
-  findChildren(root, values)
+  if (type === 'drop') {
+    findParent(values)
+    findChildren(root, values)
+  } else {
+    findType(values);
+    root[0].children = values;
+  }
+
   return root
 }
 
