@@ -7,25 +7,23 @@
 }
 
 .content {
-  width: 250px;
-  height: 36px;
-  margin: 0 auto;
-  display: flex;
-  color: #666;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 16px;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
-  pointer-events: all;
   animation: spinner 0.4s;
   transition: ease-in-out 0.2s;
   transform: translateY(20px);
   z-index: 999999999;
 }
 
-.content i {
+.content span {
+  height: 36px;
+  background: #fff;
+  color: #666;
+  padding: 10px 16px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  pointer-events: all;
+}
+
+.content span i {
   vertical-align: middle;
   margin-right: 16px;
 }
