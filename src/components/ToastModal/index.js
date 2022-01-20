@@ -1,35 +1,35 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-18 09:44:51
- * @LastEditTime: 2022-01-18 10:49:35
+ * @LastEditTime: 2022-01-19 17:28:39
  * @LastEditors: ecstAsy
  */
 import { h } from "preact";
+import Modal from "../Modal";
 import style from "./index.css";
 
 const ToastModal = ({
   visible,
   url,
-  password,
   onConfirm
 }) => {
-  return visible && (
-    <div class={style.modal}>
-      <div className={style.body}>
-        <div class={style.main}>
-          <div class={style.header}>
-            温馨提示
-          </div>
-          <div class={style.content}>
-            <p>访问地址：<span>{url}</span></p>
-            <p>修改密码：<span>{password}</span></p>
-          </div>
-          <div class={style.footer}>
-            <button class={style.confirm} onClick={onConfirm}>确认</button>
-          </div>
-        </div>
+
+  const modalProps = {
+    visible,
+    title: '温馨提示',
+    confirmTxt: '查看',
+    cancelTxt: "关闭",
+    onOk: () => window.open(url, "_blank"),
+    onCancel: () => onConfirm()
+  }
+
+  return (
+    <Modal {...modalProps}>
+      <div class={style.content}>
+        <i class="icon icon-upload-success" />
+        <p>访问地址：<span>{url}</span></p>
       </div>
-    </div>
+    </Modal>
   )
 }
 

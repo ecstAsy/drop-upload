@@ -23,3 +23,49 @@ body {
 #app {
   height: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.submit {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #409eff;
+  border: 2px solid #409eff;
+  color: #fff;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  font-weight: 500;
+  user-select: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.submit:hover {
+  background-color: rgb(102, 177, 255);
+  border-color: transparent;
+}
+
+.submit.default {
+  border-color: rgb(229, 237, 247);
+  background-color: #fff;
+  color: #555;
+}
+
+.submit.default:hover {
+  background-color: rgb(229, 237, 247);
+  border-color: transparent;
+}

@@ -1,0 +1,62 @@
+.Header {
+  width: 100%;
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 0 20px 8px #f1f1f1;
+}
+
+.Avator {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #444;
+  position: relative;
+  cursor: pointer;
+}
+
+.Avator span {
+  margin-left: 8px;
+}
+
+.Avator svg,
+.Avator:hover {
+  color: rgb(102, 177, 255);
+}
+
+.Avator:hover .AvatorAction {
+  opacity: 1;
+  display: block;
+  transition: ease-in-out .3s;
+}
+
+.AvatorAction {
+  width: 100px;
+  right: 0;
+  top: 56px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 6px;
+  opacity: 0;
+  display: none;
+}
+
+.AvatorAction li {
+  height: 36px;
+  line-height: 36px;
+  font-size: 13px;
+  color: #888;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.AvatorAction li:hover {
+  color: rgb(102, 177, 255);
+}
+
+.AvatorAction li i {
+  margin-right: 8px;
+}

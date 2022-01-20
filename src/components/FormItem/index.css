@@ -1,0 +1,71 @@
+.FormItem {
+  height: 62px;
+  margin-bottom: 8px;
+}
+
+.FormItem label {
+  display: flex;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 50px;
+  align-items: center;
+}
+
+.FormItem label span {
+  height: 38px;
+  line-height: 38px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.FormItem label span.required {
+  position: relative;
+}
+
+.FormItem label span.required::after {
+  position: absolute;
+  display: block;
+  content: "*";
+  color: #ff4d4f;
+  top: 0;
+  left: -12px;
+}
+
+.FormItem p.error {
+  height: 24px;
+  line-height: 24px;
+  color: #ff4d4f;
+  font-size: 12px;
+  text-align: left;
+  text-indent: 110px;
+  animation: spinner 1s;
+  transition: ease-in-out 1s;
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  25% {
+    opacity: 0.1;
+    transform: translateY(-18px);
+  }
+
+  50% {
+    opacity: 0.2;
+    transform: translateY(-12px);
+  }
+
+  75% {
+    opacity: 0.3;
+    transform: translateY(-6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

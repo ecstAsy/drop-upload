@@ -1,0 +1,45 @@
+.Slider {
+  width: 60px;
+  box-shadow: 0 0 20px 8px #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Slider li {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Slider li:first-of-type {
+  height: 56px;
+}
+
+.Slider li img {
+  width: 32px;
+  height: 32px;
+}
+
+.Slider li .Link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Slider li .Link svg {
+  color: #444;
+}
+
+.Slider li .Active {
+  background-color: rgb(102, 177, 255, .24);
+}
+
+.Slider li .Active svg {
+  color: rgb(102, 177, 255);
+}

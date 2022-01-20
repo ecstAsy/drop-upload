@@ -1,0 +1,34 @@
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100001;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.ring {
+  width: 60px;
+  height: 60px;
+  border-top: 1px solid rgba(3, 105, 214, 0.15);
+  border-right: 1px solid rgba(3, 105, 214, 0.15);
+  border-bottom: 1px solid rgba(3, 105, 214, 0.15);
+  border-left: 1px solid rgb(3, 105, 214, 1);
+  border-radius: 50%;
+
+  animation: spinner 600ms infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-17 09:33:37
- * @LastEditTime: 2022-01-19 09:22:02
+ * @LastEditTime: 2022-01-19 11:51:41
  * @LastEditors: ecstAsy
  */
 export default (config, env, helpers) => {
@@ -9,9 +9,12 @@ export default (config, env, helpers) => {
   if (!env.isProd) {
     config.devServer.proxy = [
       {
-        path: '/',
-        target: 'http://localhost:990',
+        path: '/api',
+        target: 'http://localhost:99',
       }
     ];
+  }
+  if(env.isProd){
+     config.output.publicPath = '/static/'
   }
 }

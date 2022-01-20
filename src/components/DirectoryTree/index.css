@@ -5,7 +5,7 @@
   line-height: 24px;
 }
 
-li {
+.DirectoryTree li {
   font-size: 12px;
   list-style: decimal;
   display: flex;
@@ -14,7 +14,7 @@ li {
   margin-left: 24px;
 }
 
-li p {
+.DirectoryTree li p {
   line-height: 36px;
 }
 

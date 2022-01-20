@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2022-01-18 14:10:54
- * @LastEditTime: 2022-01-18 14:29:23
+ * @LastEditTime: 2022-01-19 14:47:08
  * @LastEditors: ecstAsy
  */
 import Directory from './directory';
@@ -18,10 +18,26 @@ const FileValidated = files => {
   }
   return valid
 }
+const getCookie = name => {
+  const prefix = `${name}=`;
+  const start = document.cookie.indexOf(prefix);
 
+  if (start == -1) {
+    return null;
+  }
+
+  let end = document.cookie.indexOf(";", start + prefix.length);
+  if (end == -1) {
+    end = document.cookie.length;
+  }
+
+  const value = document.cookie.substring(start + prefix.length, end);
+  return value;
+}
 export {
   Directory,
   getTree,
   Request,
-  FileValidated
+  FileValidated,
+  getCookie
 }

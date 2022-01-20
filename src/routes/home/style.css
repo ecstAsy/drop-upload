@@ -1,11 +1,79 @@
 .home {
-  min-height: 100%;
+  height: calc(100vh - 88px);
   width: 100%;
   text-align: center;
   display: flex;
-  flex-direction: column;
+}
+
+.left {
+  flex: 1;
+  padding-top: 50px;
+  margin-right: 200px;
+  overflow-y: scroll;
+}
+
+.left li {
+  line-height: 36px;
+  margin-bottom: 12px;
+  padding: 3px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+
+.left li:hover {
+  color: rgb(102, 177, 255);
+}
+
+.liActive {
+  background-color: rgba(24, 144, 255, .2);
+  border-radius: 6px;
+  transition: ease-in-out .3s;
+  color: rgb(102, 177, 255);
+}
+
+.left li div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left li i {
+  margin-left: 16px;
+}
+
+.left li span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 24px;
+}
+
+.left li a {
+  display: flex;
+  font-size: 14px;
+  text-decoration: none;
+  color: #409eff;
+  margin-left: 12px;
+}
+
+.left li .action {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.content {
+  width: 720px;
 }
 
 h3 {
@@ -67,63 +135,6 @@ h3 {
 }
 
 .error span {
-  color: red;
+  color: #ff4d4f;
   transition: ease-in-out .5s;
-}
-
-label span {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-label input {
-  width: 270px;
-  height: 30px;
-  padding: 4px 11px;
-  border: 1px solid #d9d9d9;
-  border-radius: 2px;
-  color: #000000d9;
-  font-size: 14px;
-}
-
-label input:focus {
-  border-color: #40a9ff;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
-  border-right-width: 1px !important;
-  outline: 0;
-}
-
-input::-webkit-input-placeholder {
-  font-size: 14px;
-  font-weight: 400;
-  color: #cacaca;
-}
-
-.submit {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-  height: 32px;
-  white-space: nowrap;
-  cursor: pointer;
-  background-color: #409eff;
-  border: 2px solid #409eff;
-  color: #fff;
-  -webkit-appearance: none;
-  text-align: center;
-  box-sizing: border-box;
-  outline: none;
-  margin: 24px;
-  transition: .1s;
-  font-weight: 500;
-  user-select: none;
-  padding: 8px 15px;
-  font-size: 14px;
-  border-radius: 4px;
-}
-
-.submit:hover {
-  background-color: rgb(102, 177, 255);
-  border-color: transparent;
 }
